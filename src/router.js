@@ -4,6 +4,7 @@ import Home from './views/home/Home.vue'
 import Category from './views/category/Category.vue'
 import Cart from './views/cart/Cart.vue'
 import Profile from './views/profile/Profile.vue'
+import Detail from './views/detail/Detail.vue';
 
 
 Vue.use(Router)
@@ -16,7 +17,9 @@ export default new Router({
     {path: '/home', component: Home},
     {path: '/category', component: Category},
     {path: '/cart', component: Cart},
-    {path: '/profile', component: Profile}
+    {path: '/profile', component: Profile},
+    {path: '/detail/:id', component: Detail}
+
 
   ]
 })
