@@ -1,16 +1,18 @@
 import Vue from 'vue'
-import './plugins/axios'
 import App from './App.vue'
-import store from './store'
 import router from './router'
+import store from './store'
+import VueLazyLoad from 'vue-lazyload'
 
 Vue.config.productionTip = false
 
-import http from './http.js'
-Vue.prototype.$http = http
+Vue.use(VueLazyLoad, {
+  preLoad: 1,
+  loading: require('assets/img/common/placeholder.png')
+})
 
 new Vue({
+  render: h => h(App),
   store,
-  router,
-  render: h => h(App)
+  router
 }).$mount('#app')
